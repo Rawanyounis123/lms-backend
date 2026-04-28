@@ -1,0 +1,126 @@
+@HostAddress = http://localhost:5023
+
+# Replace these with real IDs after creating records
+@courseId = 69efdc8dec0ea54d0a2d4219
+@studentId = 69efdc8dec0ea54d0a2d421c
+
+
+### ─────────────────────────────────────────
+###  COURSES
+### ─────────────────────────────────────────
+
+### Get all courses
+GET {{HostAddress}}/api/courses
+Accept: application/json
+
+###
+
+### Get course by ID
+GET {{HostAddress}}/api/courses/{{courseId}}
+Accept: application/json
+
+###
+
+### Create a course
+POST {{HostAddress}}/api/courses
+Content-Type: application/json
+
+{
+  "title": "Introduction to ASP.NET",
+  "description": "A beginner-friendly course covering ASP.NET fundamentals.",
+  "instructorName": "Jane Smith",
+  "credits": 3
+}
+
+###
+
+### Update a course
+PUT {{HostAddress}}/api/courses/{{courseId}}
+Content-Type: application/json
+
+{
+  "title": "Introduction to C# (Updated)",
+  "description": "Updated description with more advanced topics.",
+  "instructorName": "Jane Smith",
+  "credits": 4
+}
+
+###
+
+### Delete a course
+DELETE {{HostAddress}}/api/courses/{{courseId}}
+
+###
+
+
+### ─────────────────────────────────────────
+###  STUDENTS
+### ─────────────────────────────────────────
+
+### Get all students
+GET {{HostAddress}}/api/students
+Accept: application/json
+
+###
+
+### Get student by ID
+GET {{HostAddress}}/api/students/{{studentId}}
+Accept: application/json
+
+###
+
+### Create a student
+POST {{HostAddress}}/api/students
+Content-Type: application/json
+
+{
+  "fullName": "Alice Johnson",
+  "email": "alice.johnson@example.com",
+  "dateOfBirth": "2000-05-15T00:00:00Z"
+}
+
+###
+
+### Update a student
+PUT {{HostAddress}}/api/students/{{studentId}}
+Content-Type: application/json
+
+{
+  "fullName": "Alice Johnson (Updated)",
+  "email": "alice.updated@example.com",
+  "dateOfBirth": "2000-05-15T00:00:00Z"
+}
+
+###
+
+### Delete a student
+DELETE {{HostAddress}}/api/students/{{studentId}}
+
+###
+
+
+### ─────────────────────────────────────────
+###  ENROLLMENTS
+### ─────────────────────────────────────────
+
+### Get all enrollments for a student
+GET {{HostAddress}}/api/students/{{studentId}}/enrollments
+Accept: application/json
+
+###
+
+### Get all enrollments for a course
+GET {{HostAddress}}/api/courses/{{courseId}}/enrollments
+Accept: application/json
+
+###
+
+### Enroll a student in a course
+POST {{HostAddress}}/api/students/{{studentId}}/enrollments/{{courseId}}
+
+###
+
+### Unenroll a student from a course
+DELETE {{HostAddress}}/api/students/{{studentId}}/enrollments/{{courseId}}
+
+###

@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dotnet add *)",
+      "Bash(dotnet build *)",
+      "Skill(dotnet-architecture)",
+      "Bash(dotnet new *)",
+      "Bash(dotnet sln *)",
+      "Bash(rm /c/Users/rawan/source/repos/LearningManagementSystem/LearningManagementSystem.Domain/Class1.cs)",
+      "Bash(rm /c/Users/rawan/source/repos/LearningManagementSystem/LearningManagementSystem.Application/Class1.cs)",
+      "Bash(rm /c/Users/rawan/source/repos/LearningManagementSystem/LearningManagementSystem.Infrastructure/Class1.cs)",
+      "Bash(dotnet remove *)",
+      "PowerShell(Rename-Item *)",
+      "Bash(git add *)"
+    ]
+  }
+}
