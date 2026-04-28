@@ -4,11 +4,11 @@ using MongoDB.Driver;
 
 namespace LearningManagementSystem.Infrastructure.Repositories;
 
-public abstract class MongoRepository<T> : IRepository<T> where T : BaseEntity
+public abstract class BaseRepository<T> : IRepository<T> where T : BaseEntity
 {
     protected readonly IMongoCollection<T> Collection;
 
-    protected MongoRepository(IMongoCollection<T> collection)
+    protected BaseRepository(IMongoCollection<T> collection)
     {
         Collection = collection;
     }

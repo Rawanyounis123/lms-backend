@@ -5,7 +5,7 @@ using MongoDB.Driver;
 
 namespace LearningManagementSystem.Infrastructure.Repositories;
 
-public class CourseRepository : MongoRepository<Course>, ICourseRepository
+public class CourseRepository : BaseRepository<Course>, ICourseRepository
 {
     private readonly IMongoCollection<Enrollment> _enrollments;
 
